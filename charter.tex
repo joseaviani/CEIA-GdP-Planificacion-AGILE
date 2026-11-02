@@ -19,18 +19,18 @@
 \autor{Lic. José Aviani}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
+\director{[a definir]}
+\pertenenciaDirector{[a definir]} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Ing. P.A. (MSc) Veronica Charlon}
+\empresaCliente{(INTA - CONICET) IDICAL}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{20 de octubre de 2026}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{8 de diciembre de 2026} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{[a definir]}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -85,7 +85,9 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en el desarrollo y evaluación de un modelo de aprendizaje automático basado en técnicas de regresión que integre información generada durante aplicaciones de purines con información económica asociada a fertilizantes químicos, con el objetivo de estimar la valorización económica del uso de purines como biofertilizantes.
+
+El trabajo tendrá un presupuesto preliminar estimado de [a definir] horas y un costo estimado de [a definir], con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -103,44 +105,40 @@ Se adjunta a esta acta la planificación inicial.
 
 
 
+
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+El proyecto surge de una propuesta del Instituto de Investigación de la Cadena Láctea (IDICAL, INTA-CONICET), en articulación con las empresas Loma Fértil y Agronorte. El tema fue seleccionado entre las propuestas de Trabajo Final ofrecidas a los alumnos de la Carrera de Especialización en Inteligencia Artificial.
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+En las explotaciones pecuarias, los purines constituyen una fuente de nutrientes que puede aprovecharse como biofertilizante y reducir la necesidad de utilizar fertilizantes químicos. Sin embargo, su composición presenta una importante variabilidad. Mediante los métodos tradicionales de aplicación se conoce, en general, el volumen distribuido, pero no la cantidad efectiva de nutrientes incorporados al suelo. Esto dificulta tanto una dosificación adecuada como la valoración económica de su aprovechamiento.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Actualmente, el sistema HarvestLab 3000, mediante la tecnología \textit{Manure Sensing} y el uso de espectroscopía de infrarrojo cercano (\textit{Near-Infrared Spectroscopy}, NIRS), permite analizar el purín durante su aplicación. El sistema obtiene mediciones en tiempo real de su composición nutricional y genera información georreferenciada de los nutrientes aplicados en cada lote. En el marco del proyecto se realizan trabajos de validación regional mediante la comparación de las lecturas del sensor con análisis de laboratorio.
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
+Esta tecnología permite conocer con mayor precisión qué nutrientes se aplican, pero la información obtenida no se traduce directamente en una estimación de su valor económico. El problema que aborda este Trabajo Final consiste en aprovechar los datos generados durante las aplicaciones para estimar económicamente el uso del purín como biofertilizante y compararlo con alternativas de fertilización convencional.
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
+La solución propuesta consiste en desarrollar y evaluar un algoritmo de regresión que integre los datos obtenidos mediante HarvestLab 3000 con variables operativas e información económica de fertilizantes químicos. La información disponible contempla concentraciones de nutrientes —entre ellos nitrógeno, fósforo y potasio—, dosis aplicadas, tiempos operativos, distancias y datos georreferenciados. Además, se incorporarán precios actualizados de fertilizantes.
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+Uno de los desafíos iniciales del proyecto será acceder a los datos necesarios para el desarrollo del modelo. La información generada por HarvestLab 3000 se encuentra almacenada en la plataforma de John Deere, por lo que será necesario gestionar su acceso y determinar la forma adecuada de extraerla para su posterior procesamiento y análisis. La disponibilidad, estructura y calidad de estos datos condicionarán las etapas posteriores del proyecto.
+
+La variable objetivo definitiva se establecerá durante la etapa inicial del proyecto junto con INTA, Loma Fértil y Agronorte. Entre las alternativas consideradas se encuentran el valor económico por hectárea, el ahorro respecto de una estrategia de fertilización convencional, una medida de costo/beneficio de la aplicación u otra variable económica derivada de las mediciones disponibles y de la información de mercado.
+
+La propuesta de valor radica en transformar mediciones agronómicas obtenidas durante las aplicaciones en información económica cuantificable. Los potenciales usuarios son productores agropecuarios, técnicos y asesores, quienes podrán disponer de información adicional para evaluar los beneficios económicos del uso de purines frente a alternativas de fertilización convencional. La integración de datos reales y georreferenciados con información económica actualizada y técnicas de aprendizaje automático constituye el aspecto central de la solución propuesta.
+
+En la Figura 1 se presenta el diagrama en bloques de la solución. Se observan dos fuentes principales de información: los datos generados por HarvestLab 3000 y la información económica asociada a fertilizantes. Los datos serán obtenidos, integrados y acondicionados antes de utilizarse para desarrollar el algoritmo de regresión. Posteriormente, se evaluará y validará el modelo obtenido. Como resultado se espera generar una estimación económica por unidad de superficie que pueda utilizarse como información de apoyo para la toma de decisiones.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema.}
+\includegraphics[width=.65\textwidth]{./Figuras/01_Flujo_datos_agricolas_y_decisiones.png}
+\caption{Flujo de datos agrícolas y decisiones.}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
 
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
