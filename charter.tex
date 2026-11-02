@@ -152,9 +152,9 @@ Los principales interesados identificados para el proyecto se presentan en la si
 Rol & Nombre y Apellido & Organización & Puesto \\ \hline
 Cliente & \clientename & \empclientename & Investigadora / referente del proyecto \\ \hline
 Responsable & \authorname & FIUBA & Alumno \\ \hline
-Colaboradores & Luis Hermoso & Loma Fértil & Responsable de Loma Fértil \\ \hline
-Colaboradores & Alejandro Regalini & Agronorte & Representante de Agronorte \\ \hline
-Colaboradores & Emmanuel Rista & Agronorte & Referente para el acceso a los datos \\ \hline
+Colaborador & Luis Hermoso & Loma Fértil & Responsable de Loma Fértil \\ \hline
+Colaborador & Alejandro Regalini & Agronorte & Representante de Agronorte \\ \hline
+Colaborador & Emmanuel Rista & Agronorte & Referente para el acceso a los datos \\ \hline
 Orientador & \supname & \pertesupname & Director del Trabajo Final \\ \hline
 Usuario final & Loma Fértil y sus técnicos & Loma Fértil & - \\ \hline
 \end{tabularx}
@@ -174,46 +174,49 @@ Usuario final & Loma Fértil y sus técnicos & Loma Fértil & - \\ \hline
 
 
 
-% JA: Completar los [a definir].
-% JA: Hasta acá completo.
-
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+Proporcionar a Loma Fértil y a sus técnicos una herramienta que permita transformar los datos generados por HarvestLab 3000 en información económica accionable para cuantificar el valor de las aplicaciones de purines y mejorar la toma de decisiones. Como propósito complementario, se busca favorecer un aprovechamiento más eficiente de los nutrientes presentes en los purines y reducir la dependencia de fertilizantes químicos mediante una mejor valoración de su uso como biofertilizantes.
 
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
 
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+
+
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
 El proyecto incluye:
+
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+\item La gestión del acceso y la extracción de los datos generados por HarvestLab 3000 y almacenados en la plataforma de John Deere.
+\item El análisis exploratorio y acondicionamiento del conjunto de datos, incluyendo limpieza, tratamiento de valores faltantes o anómalos, transformación y selección de variables.
+\item La definición, junto con INTA, Loma Fértil y Agronorte, de la variable económica objetivo que se utilizará para el desarrollo del modelo.
+\item La obtención y preparación de información de precios de fertilizantes químicos necesaria para la valorización económica de las aplicaciones.
+\item La evaluación y comparación de distintas alternativas de regresión para seleccionar la más adecuada para el problema planteado.
+\item El desarrollo, entrenamiento, evaluación y validación del algoritmo de regresión seleccionado.
+\item El análisis de la relevancia de las variables utilizadas en las estimaciones.
+\item El desarrollo de un prototipo básico que permita utilizar el modelo obtenido y visualizar sus resultados mediante una interfaz de usuario sencilla.
+\item La documentación de la solución desarrollada y de los resultados obtenidos.
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El presente proyecto no incluye:
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+\begin{itemize}
+\item La integración automática del modelo con HarvestLab 3000, la plataforma de John Deere ni los sistemas informáticos de Loma Fértil.
+\item La consulta automática de precios de fertilizantes a fuentes externas.
+\item La calibración regional del sensor HarvestLab 3000 ni la validación de sus mediciones mediante análisis de laboratorio.
+\item El desarrollo de la segunda línea planteada en la propuesta original, correspondiente a la combinación de datos de HarvestLab 3000 —N, P, K y materia seca— con variables externas, como tipo de suelo, humedad, temperatura y pronóstico climático, para predecir el riesgo de lixiviación, las emisiones de óxido nitroso y el impacto sobre la huella de carbono.
+\item La validación del modelo para regiones, establecimientos, tipos de purines o condiciones productivas diferentes de las representadas en el conjunto de datos disponible para el proyecto.
+\item El desarrollo de una aplicación productiva o de una interfaz de usuario de complejidad superior al prototipo básico previsto.
+\end{itemize}
 
+
+
+
+
+% JA: Completar los [a definir].
+% JA: Hasta acá completo.
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
