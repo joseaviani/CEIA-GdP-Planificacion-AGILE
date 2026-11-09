@@ -87,7 +87,7 @@ Buenos Aires, \fechaInicioName
 
 Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en el desarrollo y evaluación de un algoritmo de regresión que integre información generada durante aplicaciones de purines con información económica asociada a fertilizantes químicos, con el objetivo de estimar la valorización económica del uso de purines como biofertilizantes.
 
-El trabajo tendrá un presupuesto preliminar estimado de [a definir] horas y un costo estimado de [a definir], con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de [a definir], con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -234,156 +234,423 @@ Para el desarrollo del presente proyecto se supone que:
 
 
 
-% JA: Completar los [a definir] y otros a definir.
-% JA: Hasta acá completo.
-
 \section{6. Product Backlog}
 \label{sec:backlog}
 
-El Product Backlog debe organizarse en cuatro \textbf{\textit{\'{e}picas}} fundamentales del proyecto. Cada \'{e}pica debe contener al menos dos historias de usuario que describan funcionalidades clave.
+El \textit{Product Backlog} se organiza en cuatro épicas que representan los principales bloques funcionales del proyecto. Para cada historia de usuario se indica su prioridad, obligatoriedad y ponderación en \textit{Story Points}.
 
-El Product Backlog debe permitir interpretar cómo será el proyecto y su funcionalidad. Se deben indicar claramente las prioridades entre las historias de usuario y si hay alguna opcional.
+Para estimar los \textit{Story Points} se consideran tres dimensiones: \textbf{dificultad}, asociada a la cantidad de trabajo; \textbf{complejidad}, vinculada con el nivel técnico; e \textbf{incertidumbre}, relacionada con el riesgo, la novedad o la experiencia previa. Para cada dimensión se utiliza la siguiente escala: baja = 1, media = 3 y alta = 5. Los valores se suman y, cuando el resultado no pertenece a la serie de Fibonacci, se redondea hacia el valor superior más próximo.
 
-Las historias de usuario deben ser breves, claras y medibles, expresando el rol, la necesidad y el propósito de cada funcionalidad. También deben tener una prioridad definida para facilitar la planificación de los sprints.
-
-Cada historia de usuario debe incluir una ponderación en \textit{Story Points}, un número entero que representa el tama\~no relativo de la historia. El criterio para calcular los Story Points debe indicarse explícitamente.
-
-Las historias deben seguir el formato: ``\textit{Como [rol], quiero [tal cosa] para [tal otra cosa]}''.
-
-Las \'{e}picas deben estructurarse de la siguiente forma:
+La estimación global del proyecto es de \textbf{600 horas}. Los \textit{Story Points} se utilizan como medida relativa entre historias de usuario y no representan una conversión directa a horas.
 
 \begin{itemize}
-  \item \textbf{\'{E}pica 1}
+
+  \item \textbf{\'{E}pica 1 - Acceso y preparación de los datos}
     \begin{itemize}
-      \item HU1
-      \item HU2
+
+      \item \textbf{HU1} Como \textbf{científico de datos}, quiero acceder y extraer los datos generados por HarvestLab 3000 y almacenados en la plataforma de John Deere para disponer de la información necesaria para el desarrollo del modelo.
+        \begin{itemize}
+          \item Prioridad: Alta.
+          \item Obligatoriedad: Obligatoria.
+          \item Dificultad: Media (3).
+          \item Complejidad: Media (3).
+          \item Incertidumbre: Alta (5).
+          \item Suma: 11.
+          \item \textit{Story Points}: \textbf{13}.
+        \end{itemize}
+
+      \item \textbf{HU2} Como \textbf{científico de datos}, quiero acondicionar y transformar los datos extraídos para obtener un conjunto de datos consistente y adecuado para su análisis y modelado.
+        \begin{itemize}
+          \item Prioridad: Alta.
+          \item Obligatoriedad: Obligatoria.
+          \item Dificultad: Alta (5).
+          \item Complejidad: Media (3).
+          \item Incertidumbre: Alta (5).
+          \item Suma: 13.
+          \item \textit{Story Points}: \textbf{13}.
+        \end{itemize}
+
     \end{itemize}
-  \item \textbf{\'{E}pica 2}
+
+
+  \item \textbf{\'{E}pica 2 - Construcción de la estimación económica}
     \begin{itemize}
-      \item HU3
-      \item HU4
+
+      \item \textbf{HU3} Como \textbf{científico de datos}, quiero integrar los datos de las aplicaciones con información de precios de fertilizantes para construir las variables económicas necesarias para el modelo.
+        \begin{itemize}
+          \item Prioridad: Alta.
+          \item Obligatoriedad: Obligatoria.
+          \item Dificultad: Media (3).
+          \item Complejidad: Media (3).
+          \item Incertidumbre: Baja (1).
+          \item Suma: 7.
+          \item \textit{Story Points}: \textbf{8}.
+        \end{itemize}
+
+      \item \textbf{HU4} Como \textbf{usuario final}, quiero obtener una estimación económica por unidad de superficie a partir de los datos de una aplicación para evaluar el valor económico del uso del purín como biofertilizante.
+        \begin{itemize}
+          \item Prioridad: Alta.
+          \item Obligatoriedad: Obligatoria.
+          \item Dificultad: Alta (5).
+          \item Complejidad: Alta (5).
+          \item Incertidumbre: Media (3).
+          \item Suma: 13.
+          \item \textit{Story Points}: \textbf{13}.
+        \end{itemize}
+
     \end{itemize}
-  \item \textbf{\'{E}pica 3}
+
+
+  \item \textbf{\'{E}pica 3 - Modelado, evaluación y validación}
     \begin{itemize}
-      \item HU5
-      \item HU6
+
+      \item \textbf{HU5} Como \textbf{científico de datos}, quiero evaluar distintas alternativas de regresión para seleccionar el modelo que presente el desempeño más adecuado para el problema planteado.
+        \begin{itemize}
+          \item Prioridad: Alta.
+          \item Obligatoriedad: Obligatoria.
+          \item Dificultad: Alta (5).
+          \item Complejidad: Alta (5).
+          \item Incertidumbre: Alta (5).
+          \item Suma: 15.
+          \item \textit{Story Points}: \textbf{21}.
+        \end{itemize}
+
+      \item \textbf{HU6} Como \textbf{usuario final}, quiero disponer de información sobre el desempeño del modelo y sobre las variables relevantes de la estimación para interpretar adecuadamente los resultados obtenidos.
+        \begin{itemize}
+          \item Prioridad: Media.
+          \item Obligatoriedad: Obligatoria.
+          \item Dificultad: Media (3).
+          \item Complejidad: Media (3).
+          \item Incertidumbre: Baja (1).
+          \item Suma: 7.
+          \item \textit{Story Points}: \textbf{8}.
+        \end{itemize}
+
     \end{itemize}
-  \item \textbf{\'{E}pica 4}
+
+
+  \item \textbf{\'{E}pica 4 - Prototipo y presentación de resultados}
     \begin{itemize}
-      \item HU7
-      \item HU8
+
+      \item \textbf{HU7} Como \textbf{desarrollador}, quiero implementar un prototipo con una interfaz básica que permita seleccionar datos previamente cargados y ejecutar el modelo para facilitar su utilización por los usuarios de Loma Fértil.
+        \begin{itemize}
+          \item Prioridad: Alta.
+          \item Obligatoriedad: Obligatoria.
+          \item Dificultad: Alta (5).
+          \item Complejidad: Media (3).
+          \item Incertidumbre: Media (3).
+          \item Suma: 11.
+          \item \textit{Story Points}: \textbf{13}.
+        \end{itemize}
+
+      La modalidad exacta de selección de los datos previamente cargados se definirá durante el desarrollo del proyecto.
+
+      \item \textbf{HU8} Como \textbf{usuario final}, quiero visualizar la estimación económica junto con información complementaria y disponer de una opción de exportación para analizar y conservar los resultados obtenidos.
+        \begin{itemize}
+          \item Prioridad: Media.
+          \item Obligatoriedad: Obligatoria.
+          \item Dificultad: Media (3).
+          \item Complejidad: Media (3).
+          \item Incertidumbre: Media (3).
+          \item Suma: 9.
+          \item \textit{Story Points}: \textbf{13}.
+        \end{itemize}
+
+      La información complementaria a visualizar se definirá durante el desarrollo del proyecto. Entre las alternativas consideradas se encuentran los nutrientes aplicados, su valor equivalente en fertilizantes y comparaciones con alternativas de fertilización convencional. Asimismo, se evaluarán posibles formatos de exportación, como CSV o PDF, sin definir en esta etapa un formato obligatorio.
+
     \end{itemize}
+
 \end{itemize}
 
-\textbf{Reglas para definir historias de usuario:}
-\begin{itemize}
-  \item Ser concisas y claras.
-  \item Expresarlas en términos cuantificables y medibles.
-  \item No dejar margen para interpretaciones ambiguas.
-  \item Indicar claramente su prioridad y si son opcionales.
-  \item Considerar regulaciones y normas vigentes.
-\end{itemize}
+
+
+
 
 \section{7. Criterios de aceptación de historias de usuario}
 \label{sec:criteriosAceptacion}
 
-Los criterios de aceptación deben establecerse para cada historia de usuario, asegurando que se cumplan las condiciones necesarias para que la funcionalidad sea validada correctamente.
-
-Cada historia debe tener criterios medibles, específicos y verificables. Deben permitir validar que se cumple con las necesidades del usuario.
-
-Se estructuran de forma análoga a las \'{e}picas del backlog:
+Los criterios de aceptación permiten determinar de manera objetiva cuándo cada historia de usuario puede considerarse completada. Se definen a continuación criterios funcionales, técnicos y, cuando corresponde, de presentación de resultados.
 
 \begin{itemize}
-  \item \textbf{\'{E}pica 1}
+
+  \item \textbf{\'{E}pica 1 - Acceso y preparación de los datos}
     \begin{itemize}
-      \item Criterios de aceptación HU1
-      \item Criterios de aceptación HU2
+
+      \item \textbf{Criterios de aceptación HU1}
+        \begin{itemize}
+          \item Se obtiene acceso efectivo a los datos generados por HarvestLab 3000 y almacenados en la plataforma de John Deere.
+          \item Los datos necesarios para el desarrollo pueden extraerse desde la fuente disponible y almacenarse para su posterior procesamiento.
+          \item El procedimiento utilizado para acceder y extraer los datos queda documentado de manera que pueda repetirse durante el desarrollo del proyecto.
+        \end{itemize}
+
+      \item \textbf{Criterios de aceptación HU2}
+        \begin{itemize}
+          \item Los datos extraídos pueden transformarse a un formato adecuado para su procesamiento y análisis.
+          \item Se identifican y tratan los valores faltantes, anómalos o inconsistentes mediante criterios documentados.
+          \item El conjunto de datos acondicionado puede cargarse y procesarse sin errores que impidan su utilización en las etapas posteriores.
+          \item Se conservan las variables consideradas relevantes para el análisis y desarrollo del modelo.
+        \end{itemize}
+
     \end{itemize}
-  \item \textbf{\'{E}pica 2}
+
+
+  \item \textbf{\'{E}pica 2 - Construcción de la estimación económica}
     \begin{itemize}
-      \item Criterios de aceptación HU3
-      \item Criterios de aceptación HU4
+
+      \item \textbf{Criterios de aceptación HU3}
+        \begin{itemize}
+          \item Se incorpora información de precios de fertilizantes proveniente de al menos una fuente pública y confiable.
+          \item Se documentan la fuente y la fecha de referencia de la información económica utilizada.
+          \item Se construyen las variables económicas necesarias para relacionar la información de las aplicaciones con los precios de fertilizantes.
+          \item El procedimiento utilizado para construir las variables económicas queda documentado y puede reproducirse a partir de los mismos datos de entrada.
+        \end{itemize}
+
+      \item \textbf{Criterios de aceptación HU4}
+        \begin{itemize}
+          \item A partir de los datos correspondientes a una aplicación, el sistema genera una estimación económica expresada por unidad de superficie.
+          \item La estimación se calcula utilizando la variable objetivo acordada con los interesados y las variables definidas durante el desarrollo del modelo.
+          \item Ante los mismos datos de entrada y la misma versión del modelo, se obtiene el mismo resultado de la estimación.
+          \item El resultado se presenta identificando la variable estimada, el valor obtenido y la unidad de medida correspondiente.
+        \end{itemize}
+
     \end{itemize}
-  \item \textbf{\'{E}pica 3}
+
+
+  \item \textbf{\'{E}pica 3 - Modelado, evaluación y validación}
     \begin{itemize}
-      \item Criterios de aceptación HU5
-      \item Criterios de aceptación HU6
+
+      \item \textbf{Criterios de aceptación HU5}
+        \begin{itemize}
+          \item Se desarrollan y evalúan al menos tres alternativas de regresión.
+          \item Todas las alternativas se evalúan utilizando el mismo esquema de preparación de datos, partición o validación y las mismas métricas definidas para la comparación.
+          \item Las métricas de evaluación se establecen durante el desarrollo en función de las características del problema y de la variable objetivo.
+          \item La selección del modelo final se justifica mediante la comparación de los resultados obtenidos y queda documentada.
+        \end{itemize}
+
+      \item \textbf{Criterios de aceptación HU6}
+        \begin{itemize}
+          \item Se presentan las métricas utilizadas para evaluar el desempeño del modelo seleccionado.
+          \item Se identifican y presentan las variables que muestran mayor relevancia para las estimaciones mediante una técnica adecuada al modelo utilizado.
+          \item La información sobre desempeño y relevancia de variables se presenta mediante valores, tablas o gráficos identificados y acompañados por una descripción de su significado.
+          \item Se documentan las principales limitaciones del modelo que deban considerarse al interpretar los resultados.
+        \end{itemize}
+
     \end{itemize}
-  \item \textbf{\'{E}pica 4}
+
+
+  \item \textbf{\'{E}pica 4 - Prototipo y presentación de resultados}
     \begin{itemize}
-      \item Criterios de aceptación HU7
-      \item Criterios de aceptación HU8
+
+      \item \textbf{Criterios de aceptación HU7}
+        \begin{itemize}
+          \item El prototipo permite seleccionar un conjunto de datos previamente cargado sin necesidad de modificar el código fuente.
+          \item El usuario puede ejecutar el modelo sobre los datos seleccionados desde la interfaz del prototipo.
+          \item Una vez ejecutado el modelo, el prototipo presenta la estimación económica obtenida.
+          \item La interfaz identifica de manera clara el conjunto de datos seleccionado, la acción necesaria para ejecutar el modelo y el resultado generado.
+        \end{itemize}
+
+      La modalidad específica mediante la cual se realizará la selección de los datos previamente cargados se definirá durante el desarrollo del proyecto.
+
+      \item \textbf{Criterios de aceptación HU8}
+        \begin{itemize}
+          \item La interfaz muestra la estimación económica obtenida y al menos un tipo de información complementaria asociada al resultado.
+          \item La interfaz muestra al menos un tipo de información complementaria acordado durante la ejecución del proyecto.
+          \item Los resultados se presentan con descripciones y unidades que permitan interpretar correctamente la información mostrada.
+          \item El prototipo permite exportar los resultados en al menos un formato definido durante el desarrollo del proyecto.
+          \item El archivo exportado contiene, como mínimo, la estimación económica y la información complementaria presentada por el prototipo.
+        \end{itemize}
+
+      El formato específico de exportación se definirá durante el desarrollo del proyecto. Entre las alternativas consideradas se encuentran CSV y PDF.
+
     \end{itemize}
+
 \end{itemize}
 
-\textbf{Reglas para definir criterios de aceptación:}
-\begin{itemize}
-  \item Medibles y verificables.
-  \item Especificar cuándo una historia se considera completada.
-  \item Incluir condiciones específicas.
-  \item No ambiguos.
-  \item Probables de testear funcional o técnicamente.
-  \item Mínimo 3 criterios por HU.
-\end{itemize}
+
+
+
 
 \section{8. Fases de CRISP-DM}
 
+Para el desarrollo del proyecto se utilizará la metodología CRISP-DM (\textit{Cross-Industry Standard Process for Data Mining}) como marco de referencia para organizar las actividades relacionadas con la comprensión del problema, el tratamiento de los datos, el desarrollo del modelo y su evaluación. Las decisiones específicas correspondientes a cada fase se ajustarán durante la ejecución del proyecto en función de la disponibilidad, estructura y características de los datos obtenidos.
+
 \begin{enumerate}
-  \item \textbf{Comprensión del negocio:} objetivo, valor agregado de IA, métricas de éxito.
-  \item \textbf{Comprensión de los datos:} tipo, origen, cantidad, calidad.
-  \item \textbf{Preparación de los datos:} características clave, transformaciones necesarias.
-  \item \textbf{Modelado:} tipo de problema, algoritmos posibles.
-  \item \textbf{Evaluación del modelo:} métricas de rendimiento.
-  \item \textbf{Despliegue del modelo (opcional):} tipo de despliegue y herramientas.
+
+  \item \textbf{Comprensión del negocio}
+
+  El objetivo del proyecto es transformar los datos generados durante las aplicaciones de purines en información económica que permita cuantificar su valor como biofertilizante por unidad de superficie y facilite la toma de decisiones de Loma Fértil y sus técnicos.
+
+  El valor agregado de la aplicación de técnicas de inteligencia artificial consiste en desarrollar un modelo capaz de relacionar las variables disponibles en los datos de las aplicaciones con información económica asociada a fertilizantes y generar una estimación a partir de dicha relación.
+
+  Como criterios generales de éxito se considerará la obtención de una estimación económica interpretable por los usuarios, el desarrollo de un modelo evaluado y validado mediante métricas adecuadas y la disponibilidad de un prototipo básico que permita consultar los resultados. Las métricas y condiciones específicas de éxito se definirán y ajustarán durante la ejecución del proyecto junto con los interesados.
+
+
+  \item \textbf{Comprensión de los datos}
+
+  Los datos principales provendrán del sistema HarvestLab 3000 y se encuentran almacenados en la plataforma de John Deere. La información disponible contempla variables relacionadas con la composición de los purines y con las aplicaciones realizadas, entre ellas concentraciones de nitrógeno, fósforo y potasio, dosis aplicadas, tiempos operativos, distancias y datos georreferenciados.
+
+  Además, se utilizará información económica proveniente de fuentes públicas y confiables, principalmente precios de fertilizantes químicos, para construir las variables necesarias para la valorización económica.
+
+  Durante esta fase se analizarán la estructura, cantidad, calidad, consistencia y representatividad de los datos disponibles. La cantidad efectiva de registros, su formato y el nivel de detalle se determinarán una vez obtenido el acceso a la información de la plataforma de John Deere.
+
+
+  \item \textbf{Preparación de los datos}
+
+  Los datos obtenidos serán acondicionados para su utilización en las etapas de análisis y modelado. Esta fase incluirá la transformación de los datos extraídos a un formato adecuado para su procesamiento, independientemente de su formato original.
+
+  Se realizará la identificación y tratamiento de valores faltantes, anómalos o inconsistentes. También se evaluarán transformaciones, normalizaciones y mecanismos de selección o generación de variables que resulten necesarios para el desarrollo del modelo.
+
+  Entre las características inicialmente consideradas se encuentran las concentraciones de nutrientes, dosis aplicadas, variables operativas y georreferenciadas, junto con las variables económicas construidas a partir de los precios de fertilizantes. La selección definitiva de características y las transformaciones a aplicar se establecerán durante la ejecución del proyecto a partir del análisis exploratorio de los datos.
+
+
+  \item \textbf{Modelado}
+
+  El problema se abordará como un problema de regresión orientado a estimar una variable económica por unidad de superficie. La variable objetivo definitiva será acordada durante la ejecución del proyecto junto con INTA, Loma Fértil y Agronorte.
+
+  Se evaluarán distintas alternativas de regresión. Entre las opciones inicialmente consideradas se encuentran modelos de regresión lineal y variantes regularizadas, árboles de decisión, métodos de ensamble, \textit{Random Forest} y \textit{Gradient Boosting}. Estas alternativas son preliminares y podrán modificarse o ampliarse en función de las características del conjunto de datos.
+
+  Durante esta fase se desarrollarán, entrenarán y ajustarán al menos tres alternativas de regresión. La selección del modelo final se realizará a partir de la comparación de sus resultados y de las métricas definidas durante la ejecución del proyecto.
+
+
+  \item \textbf{Evaluación del modelo}
+
+  Los modelos desarrollados serán evaluados mediante métricas adecuadas para problemas de regresión. Entre las métricas inicialmente consideradas se encuentran el error absoluto medio (MAE, del inglés \textit{Mean Absolute Error}), la raíz del error cuadrático medio (RMSE, del inglés \textit{Root Mean Squared Error}) y el coeficiente de determinación \(R^2\). La selección definitiva de las métricas se realizará durante la ejecución del proyecto en función de la variable objetivo y de las características de los datos.
+
+  Se utilizará una estrategia de separación entre datos de entrenamiento y evaluación. Si la cantidad y las características de los datos lo permiten, se considerará además el uso de técnicas de validación cruzada. La estrategia específica de validación se definirá luego de la etapa de comprensión y análisis exploratorio de los datos.
+
+  La evaluación no se limitará al desempeño predictivo. También se analizará la relevancia de las variables utilizadas, las limitaciones del modelo y la consistencia de los resultados respecto de los objetivos definidos para el proyecto.
+
+
+  \item \textbf{Despliegue del modelo}
+
+  En el contexto de este proyecto, el despliegue consistirá en integrar el modelo seleccionado en un prototipo básico con una interfaz sencilla que permita utilizar datos previamente cargados y visualizar los resultados obtenidos.
+
+  El prototipo deberá permitir ejecutar el modelo, consultar la estimación económica y acceder a información complementaria asociada al resultado. También se prevé incorporar al menos una opción de exportación. La modalidad de selección de datos, la información adicional a presentar, el formato de exportación y las herramientas concretas para implementar el prototipo se definirán durante la ejecución del proyecto.
+
+  Esta fase no contempla un despliegue productivo ni la integración automática con HarvestLab 3000, la plataforma de John Deere o los sistemas informáticos de Loma Fértil.
+
 \end{enumerate}
+
+
+
+
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-A partir de cada Historia de Usuario (HU) definida en la sección 6, descomponer el trabajo en tareas técnicas concretas, medibles y acotadas en el tiempo.
+A partir de las historias de usuario definidas en la sección 6, se propone el siguiente desglose preliminar en tareas técnicas. Las estimaciones horarias y las decisiones relacionadas con herramientas, mecanismos de acceso a los datos, técnicas de procesamiento, algoritmos y tecnologías de implementación podrán ajustarse durante la ejecución del proyecto a medida que se disponga de mayor información.
 
 \begin{itemize}
-\item Seleccionar entre 2 y 3 tareas por cada historia de usuario.
-\item Cada tarea debe estar claramente formulada, ser técnica, accionable y con una estimación horaria entre 2 y 8 horas.
-\item Evitar tareas genéricas (como ''desarrollar funcionalidad´´) o demasiado amplias.
-\item Si una tarea supera las 8 horas, debe dividirse en subtareas.
-\item Indicar la prioridad relativa de cada tarea (Alta, Media o Baja).
+
+  \item \textbf{\'{E}pica 1 - Acceso y preparación de los datos}
+
+  \begin{center}
+  \begin{tabular}{|c|p{9cm}|c|c|}
+  \hline
+  \textbf{HU} & \textbf{Tarea técnica} & \textbf{Estimación} & \textbf{Prioridad} \\
+  \hline
+  HU1 & Relevar y verificar el mecanismo disponible para acceder a los datos almacenados en la plataforma de John Deere. & 4 h & Alta \\
+  \hline
+  HU1 & Realizar una extracción inicial de datos y almacenarla para su posterior procesamiento. & 6 h & Alta \\
+  \hline
+  HU1 & Verificar la integridad, legibilidad y posibilidad de procesamiento de los datos extraídos, y documentar el procedimiento utilizado. & 4 h & Alta \\
+  \hline
+  HU2 & Realizar un perfilado inicial del conjunto de datos para identificar tipos de variables, valores faltantes, anomalías e inconsistencias. & 6 h & Alta \\
+  \hline
+  HU2 & Implementar las transformaciones y procedimientos de limpieza necesarios para obtener un conjunto de datos adecuado para el modelado. & 8 h & Alta \\
+  \hline
+  HU2 & Verificar la reproducibilidad del acondicionamiento y la conservación de las variables consideradas relevantes para el análisis. & 5 h & Alta \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  El mecanismo específico de acceso y extracción, así como las transformaciones concretas necesarias, se definirán durante la ejecución del proyecto luego de analizar la estructura real de los datos disponibles.
+
+
+  \item \textbf{\'{E}pica 2 - Construcción de la estimación económica}
+
+  \begin{center}
+  \begin{tabular}{|c|p{9cm}|c|c|}
+  \hline
+  \textbf{HU} & \textbf{Tarea técnica} & \textbf{Estimación} & \textbf{Prioridad} \\
+  \hline
+  HU3 & Identificar una o más fuentes públicas y confiables de precios de fertilizantes y registrar su información de referencia. & 4 h & Alta \\
+  \hline
+  HU3 & Implementar el procedimiento de transformación e integración necesario para construir las variables económicas a partir de los datos de aplicaciones y precios de fertilizantes. & 6 h & Alta \\
+  \hline
+  HU4 & Definir la estructura de entradas y salidas necesaria para generar la estimación económica por unidad de superficie a partir de la variable objetivo acordada. & 4 h & Alta \\
+  \hline
+  HU4 & Implementar y verificar el procedimiento que genere la estimación económica para los datos correspondientes a una aplicación. & 6 h & Alta \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  La fuente definitiva de precios, la variable económica objetivo y las transformaciones utilizadas para construir las variables económicas se definirán durante la ejecución del proyecto junto con los interesados.
+
+
+  \item \textbf{\'{E}pica 3 - Modelado, evaluación y validación}
+
+  \begin{center}
+  \begin{tabular}{|c|p{9cm}|c|c|}
+  \hline
+  \textbf{HU} & \textbf{Tarea técnica} & \textbf{Estimación} & \textbf{Prioridad} \\
+  \hline
+  HU5 & Definir el protocolo preliminar de comparación de modelos, incluyendo alternativas de regresión, partición de datos y métricas de evaluación. & 4 h & Alta \\
+  \hline
+  HU5 & Implementar y ejecutar el entrenamiento de al menos tres alternativas de regresión utilizando un esquema común de preparación y evaluación. & 8 h & Alta \\
+  \hline
+  HU5 & Comparar los resultados obtenidos, seleccionar el modelo más adecuado y documentar los criterios utilizados para la selección. & 6 h & Alta \\
+  \hline
+  HU6 & Calcular y organizar las métricas de desempeño correspondientes al modelo seleccionado. & 4 h & Media \\
+  \hline
+  HU6 & Analizar la relevancia de las variables y documentar las principales limitaciones que deban considerarse para interpretar las estimaciones. & 6 h & Media \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  Los algoritmos concretos, las métricas, la estrategia de validación y las técnicas utilizadas para analizar la relevancia de las variables se definirán y ajustarán durante la ejecución del proyecto en función de las características de los datos y del modelo desarrollado.
+
+
+  \item \textbf{\'{E}pica 4 - Prototipo y presentación de resultados}
+
+  \begin{center}
+  \begin{tabular}{|c|p{9cm}|c|c|}
+  \hline
+  \textbf{HU} & \textbf{Tarea técnica} & \textbf{Estimación} & \textbf{Prioridad} \\
+  \hline
+  HU7 & Definir el flujo básico de interacción del prototipo y el mecanismo preliminar para seleccionar conjuntos de datos previamente cargados. & 4 h & Alta \\
+  \hline
+  HU7 & Implementar una interfaz básica que permita seleccionar los datos y ejecutar el modelo sin modificar el código fuente. & 8 h & Alta \\
+  \hline
+  HU7 & Verificar el funcionamiento de extremo a extremo del prototipo y la presentación de la estimación económica obtenida. & 5 h & Alta \\
+  \hline
+  HU8 & Definir, junto con los interesados, la información complementaria a visualizar y al menos un formato de exportación. & 3 h & Media \\
+  \hline
+  HU8 & Implementar la visualización de la estimación económica y de al menos un tipo de información complementaria. & 6 h & Media \\
+  \hline
+  HU8 & Implementar la exportación de los resultados y verificar que el archivo generado contenga la información requerida. & 5 h & Media \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  La tecnología de implementación del prototipo, el mecanismo definitivo de selección de datos, la información complementaria presentada y el formato de exportación se definirán durante la ejecución del proyecto.
+
 \end{itemize}
 
-\begin{table}[htpb]
-\centering
-\begin{tabularx}{\linewidth}{@{}|X|X|c|c|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0}
-Historia de usuario & Tarea técnica & Estimación & Prioridad \\ \hline
-HU1 & Tarea 1 HU1 & 6 h & Alta \\ \hline
-HU1 & Tarea 2 HU1 & 8 h & Alta \\ \hline
-HU2 & Tarea 1 HU2 & 5 h & Media \\ \hline
-HU2 & Tarea 2 HU2 & 6 h & Alta \\ \hline
-... & ... & ... & ... \\ \hline
-\end{tabularx}
-\end{table}
+Las tareas detalladas en esta sección representan las actividades técnicas directamente asociadas a las historias de usuario seleccionadas y totalizan \textbf{112 horas estimadas}. Este valor no representa la duración total del proyecto, estimada en \textbf{600 horas}, ya que no incluye la totalidad de las actividades de planificación, investigación, iteración, reuniones, documentación, redacción de la memoria, revisión y preparación de la defensa.
 
-\textbf{Criterios para estimar tiempos:}
-\begin{itemize}
-  \item Considerar la complejidad técnica, el nivel de incertidumbre y la experiencia previa.
-  \item Evitar subestimar el esfuerzo: estimar el tiempo realista que llevaría implementar, testear y documentar cada tarea.
-  \item Basar la estimación en la experiencia propia o en referencias de tareas similares.
-\end{itemize}
 
-\textbf{Sobre la prioridad:}
-\begin{itemize}
-  \item Asignar una prioridad relativa (Alta, Media o Baja) según la relevancia funcional de la tarea y su impacto en los entregables.
-  \item Priorizar tareas que estén vinculadas a criterios de aceptación de las HU o que sean necesarias para desbloquear otras.
-  \item Incluir tareas opcionales solo si están bien justificadas.
-\end{itemize}
 
-\textbf{Recomendaciones generales:}
-\begin{itemize}
-  \item -Enfocarse en tareas que surgen directamente de las HU planteadas.
-  \item No es necesario cubrir las 600 horas del proyecto en esta sección: el foco está en el desglose de funcionalidades clave.
-  \item Este trabajo será la base para organizar algunos de los sprints y elaborar el cronograma del proyecto, por lo que debe ser claro y realista.
-\end{itemize}
+
+
+% JA: Completar los "[a definir]" y otros "definir".
+% JA: Hasta acá completo.
+
+
+
+
+
+
 
 \section{10. Planificación de Sprints}
 
